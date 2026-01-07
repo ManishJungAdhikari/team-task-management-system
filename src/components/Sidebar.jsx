@@ -20,6 +20,7 @@ export default function Sidebar() {
         </div>
         <div>
           <strong>Team Manager</strong>
+          <span>Work dashboard</span>
         </div>
       </div>
 
