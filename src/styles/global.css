@@ -605,6 +605,12 @@ textarea {
   font-weight: 800;
 }
 
+.form-error {
+  color: #dc2626;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 @media (max-width: 980px) {
   .app-shell {
     grid-template-columns: 1fr;

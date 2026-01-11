@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext.jsx';
 export default function Login() {
   const { login, isAuthenticated } = useAuth();
   const [email, setEmail] = useState('demo@example.com');
+  const [error, setError] = useState('');
 
   if (isAuthenticated) {
     return <Navigate to="/" replace />;
@@ -19,6 +20,10 @@ export default function Login() {
         <form
           onSubmit={(event) => {
             event.preventDefault();
+            if (!email.includes('@')) {
+              setError('Enter a valid email address.');
+              return;
+            }
             login(email);
           }}
         >
@@ -26,6 +31,7 @@ export default function Login() {
             Email address
             <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" required />
           </label>
+          {error ? <span className="form-error">{error}</span> : null}
           <label>
             Password
             <input value="password123" type="password" readOnly />

@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 const AuthContext = createContext(null);
 
@@ -18,7 +18,18 @@ function getNameFromEmail(email) {
 }
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(defaultUser);
+  const [user, setUser] = useState(() => {
+    const savedUser = window.localStorage.getItem('team-manager-user');
+    return savedUser ? JSON.parse(savedUser) : defaultUser;
+  });
+
+  useEffect(() => {
+    if (user) {
+      window.localStorage.setItem('team-manager-user', JSON.stringify(user));
+      return;
+    }
+    window.localStorage.removeItem('team-manager-user');
+  }, [user]);
 
   const value = useMemo(
     () => ({
