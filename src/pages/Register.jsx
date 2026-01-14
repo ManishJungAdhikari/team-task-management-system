@@ -13,6 +13,14 @@ export default function Register() {
             <input placeholder="Your name" />
           </label>
           <label>
+            Workspace role
+            <select defaultValue="Team Member">
+              <option>Team Member</option>
+              <option>Project Manager</option>
+              <option>Client Reviewer</option>
+            </select>
+          </label>
+          <label>
             Email address
             <input type="email" placeholder="name@example.com" />
           </label>
