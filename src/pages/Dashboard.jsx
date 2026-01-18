@@ -6,6 +6,7 @@ export default function Dashboard() {
   const completedTasks = tasks.filter((task) => task.status === 'Completed').length;
   const inProgressTasks = tasks.filter((task) => task.status === 'In Progress').length;
   const averageProgress = Math.round(projects.reduce((sum, project) => sum + project.progress, 0) / projects.length);
+  const upcomingTasks = [...tasks].sort((a, b) => a.dueDate.localeCompare(b.dueDate)).slice(0, 3);
 
   return (
     <div className="page-stack">
@@ -63,6 +64,22 @@ export default function Dashboard() {
             ))}
           </div>
         </article>
+      </section>
+
+      <section className="panel">
+        <div className="panel-header">
+          <h2>Upcoming Deadlines</h2>
+          <span>Next priority items</span>
+        </div>
+        <div className="deadline-grid">
+          {upcomingTasks.map((task) => (
+            <article key={task.id} className="deadline-card">
+              <span>{task.dueDate}</span>
+              <strong>{task.title}</strong>
+              <small>{task.project}</small>
+            </article>
+          ))}
+        </div>
       </section>
     </div>
   );

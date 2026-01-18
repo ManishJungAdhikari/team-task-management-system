@@ -558,6 +558,27 @@ textarea {
   padding: 12px 14px;
 }
 
+.deadline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.deadline-card {
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  padding: 14px;
+}
+
+.deadline-card span,
+.deadline-card small {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .chart-panel {
   min-height: 400px;
 }
@@ -634,7 +655,8 @@ textarea {
 
   .stats-grid,
   .content-grid,
-  .project-grid {
+  .project-grid,
+  .deadline-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -671,6 +693,7 @@ textarea {
   .stats-grid,
   .content-grid,
   .project-grid,
+  .deadline-grid,
   .task-form,
   .toolbar,
   .data-row,
