@@ -221,6 +221,23 @@ a {
   gap: 16px;
 }
 
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.quick-actions a {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--blue);
+  font-weight: 800;
+  padding: 14px 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
 .stat-card,
 .panel,
 .auth-panel {
@@ -656,6 +673,7 @@ textarea {
   .stats-grid,
   .content-grid,
   .project-grid,
+  .quick-actions,
   .deadline-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -693,6 +711,7 @@ textarea {
   .stats-grid,
   .content-grid,
   .project-grid,
+  .quick-actions,
   .deadline-grid,
   .task-form,
   .toolbar,

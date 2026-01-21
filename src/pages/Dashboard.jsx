@@ -25,6 +25,12 @@ export default function Dashboard() {
         <StatCard label="Project Progress" value={`${averageProgress}%`} hint="Average completion" tone="purple" />
       </section>
 
+      <section className="quick-actions">
+        <a href="/tasks">Review task board</a>
+        <a href="/projects">Check project health</a>
+        <a href="/analytics">Open analytics</a>
+      </section>
+
       <section className="content-grid">
         <article className="panel">
           <div className="panel-header">
