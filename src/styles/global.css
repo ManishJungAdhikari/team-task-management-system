@@ -449,7 +449,7 @@ textarea {
 
 .data-row {
   display: grid;
-  grid-template-columns: minmax(240px, 1.4fr) 120px 90px 110px 140px 70px;
+  grid-template-columns: minmax(240px, 1.4fr) 120px 90px 110px 140px 54px 70px;
   align-items: center;
   gap: 12px;
   padding: 14px;

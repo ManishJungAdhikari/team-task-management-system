@@ -10,6 +10,8 @@ export default function Tasks() {
   const [status, setStatus] = useState('All');
   const [priority, setPriority] = useState('All');
   const [sortBy, setSortBy] = useState('dueDate');
+  const [editingTaskId, setEditingTaskId] = useState(null);
+  const [editingTitle, setEditingTitle] = useState('');
 
   const filteredTasks = useMemo(() => {
     return tasks
@@ -25,6 +27,19 @@ export default function Tasks() {
 
   function updateStatus(taskId, nextStatus) {
     setTasks((current) => current.map((task) => (task.id === taskId ? { ...task, status: nextStatus } : task)));
+  }
+
+  function startEditing(task) {
+    setEditingTaskId(task.id);
+    setEditingTitle(task.title);
+  }
+
+  function saveTaskTitle(taskId) {
+    const title = editingTitle.trim();
+    if (!title) return;
+    setTasks((current) => current.map((task) => (task.id === taskId ? { ...task, title } : task)));
+    setEditingTaskId(null);
+    setEditingTitle('');
   }
 
   function deleteTask(taskId) {
@@ -74,7 +89,15 @@ export default function Tasks() {
             {filteredTasks.map((task) => (
               <article key={task.id} className="data-row">
                 <div>
-                  <strong>{task.title}</strong>
+                  {editingTaskId === task.id ? (
+                    <input
+                      aria-label="Edit task title"
+                      value={editingTitle}
+                      onChange={(event) => setEditingTitle(event.target.value)}
+                    />
+                  ) : (
+                    <strong>{task.title}</strong>
+                  )}
                   <span>{task.project} · {task.assignee}</span>
                 </div>
                 <span className={`status-pill ${task.status.toLowerCase().replaceAll(' ', '-')}`}>{task.status}</span>
@@ -85,6 +108,11 @@ export default function Tasks() {
                   <option>In Progress</option>
                   <option>Completed</option>
                 </select>
+                {editingTaskId === task.id ? (
+                  <button className="text-button" onClick={() => saveTaskTitle(task.id)}>Save</button>
+                ) : (
+                  <button className="text-button" onClick={() => startEditing(task)}>Edit</button>
+                )}
                 <button className="text-button danger" onClick={() => deleteTask(task.id)}>Delete</button>
               </article>
             ))}
