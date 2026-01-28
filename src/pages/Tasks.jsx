@@ -20,6 +20,10 @@ export default function Tasks() {
       .filter((task) => (priority === 'All' ? true : task.priority === priority))
       .sort((a, b) => String(a[sortBy]).localeCompare(String(b[sortBy])));
   }, [tasks, query, status, priority, sortBy]);
+  const prioritySummary = ['High', 'Medium', 'Low'].map((level) => ({
+    level,
+    count: tasks.filter((task) => task.priority === level).length,
+  }));
 
   function createTask(task) {
     setTasks((current) => [{ ...task, id: Date.now() }, ...current]);
@@ -60,6 +64,15 @@ export default function Tasks() {
           <span>Sprint planning</span>
         </div>
         <TaskForm onCreate={createTask} />
+      </section>
+
+      <section className="priority-summary">
+        {prioritySummary.map((item) => (
+          <article key={item.level} className={`priority-summary-card ${item.level.toLowerCase()}`}>
+            <strong>{item.count}</strong>
+            <span>{item.level} priority</span>
+          </article>
+        ))}
       </section>
 
       <section className="panel">

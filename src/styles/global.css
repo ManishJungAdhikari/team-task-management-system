@@ -485,6 +485,30 @@ textarea {
 .priority-pill.medium { background: var(--orange-soft); color: var(--orange); }
 .priority-pill.low { background: var(--green-soft); color: var(--green); }
 
+.priority-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.priority-summary-card {
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 14px 16px;
+}
+
+.priority-summary-card strong {
+  font-size: 1.8rem;
+}
+
+.priority-summary-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .empty-state {
   display: grid;
   place-items: center;
@@ -674,6 +698,7 @@ textarea {
   .content-grid,
   .project-grid,
   .quick-actions,
+  .priority-summary,
   .deadline-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -712,6 +737,7 @@ textarea {
   .content-grid,
   .project-grid,
   .quick-actions,
+  .priority-summary,
   .deadline-grid,
   .task-form,
   .toolbar,
