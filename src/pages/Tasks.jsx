@@ -95,7 +95,20 @@ export default function Tasks() {
             <option value="priority">Priority</option>
             <option value="status">Status</option>
           </select>
+          <button
+            className="secondary-button"
+            type="button"
+            onClick={() => {
+              setQuery('');
+              setStatus('All');
+              setPriority('All');
+              setSortBy('dueDate');
+            }}
+          >
+            Reset
+          </button>
         </div>
+        <p className="filter-summary">Showing {filteredTasks.length} of {tasks.length} tasks</p>
 
         {filteredTasks.length ? (
           <div className="table-list">
