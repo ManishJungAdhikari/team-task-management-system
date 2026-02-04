@@ -144,7 +144,10 @@ export default function Tasks() {
             ))}
           </div>
         ) : (
-          <EmptyState title="No tasks found" message="Try changing the search or filter options." />
+          <EmptyState
+            title="No matching tasks"
+            message="Clear the filters or create a new task to continue planning the current sprint."
+          />
         )}
       </section>
     </div>
