@@ -15,6 +15,8 @@ export default function Projects() {
       <section className="project-grid">
         {projects.map((project) => {
           const projectTasks = tasks.filter((task) => task.project === project.name);
+          const completed = projectTasks.filter((task) => task.status === 'Completed').length;
+          const risk = project.progress >= 70 ? 'On Track' : project.progress >= 50 ? 'Needs Review' : 'At Risk';
           return (
             <article key={project.id} className="project-card">
               <div className="panel-header">
@@ -31,6 +33,10 @@ export default function Projects() {
                 <span>{project.progress}% complete</span>
                 <span>Due {project.deadline}</span>
                 <span>{projectTasks.length} tasks</span>
+              </div>
+              <div className="project-health">
+                <strong>{risk}</strong>
+                <span>{completed} completed tasks</span>
               </div>
             </article>
           );
