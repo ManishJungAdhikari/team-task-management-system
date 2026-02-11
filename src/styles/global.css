@@ -272,6 +272,14 @@ a {
   padding: 20px;
 }
 
+.compact-panel {
+  padding: 16px 20px;
+}
+
+.compact-panel .toolbar {
+  margin-bottom: 0;
+}
+
 .panel-header {
   justify-content: space-between;
   margin-bottom: 14px;
