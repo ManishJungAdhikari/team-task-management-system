@@ -636,6 +636,13 @@ textarea {
   padding: 12px 14px;
 }
 
+.activity-form {
+  display: grid;
+  grid-template-columns: 1fr 86px;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
 .deadline-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

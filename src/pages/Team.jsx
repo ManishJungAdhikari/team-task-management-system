@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import PageHeader from '../components/PageHeader.jsx';
 import { teamMembers } from '../data/mockData.js';
 
@@ -9,6 +10,16 @@ const activity = [
 ];
 
 export default function Team() {
+  const [updates, setUpdates] = useState(activity);
+  const [message, setMessage] = useState('');
+
+  function addUpdate(event) {
+    event.preventDefault();
+    if (!message.trim()) return;
+    setUpdates((current) => [message.trim(), ...current]);
+    setMessage('');
+  }
+
   return (
     <div className="page-stack">
       <PageHeader
@@ -42,8 +53,12 @@ export default function Team() {
             <h2>Activity Feed</h2>
             <span>Latest updates</span>
           </div>
+          <form className="activity-form" onSubmit={addUpdate}>
+            <input value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Share a project update" />
+            <button className="primary-button" type="submit">Post</button>
+          </form>
           <div className="activity-list">
-            {activity.map((item) => (
+            {updates.map((item) => (
               <div key={item} className="activity-item">{item}</div>
             ))}
           </div>
