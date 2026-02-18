@@ -38,11 +38,11 @@ export default function Team() {
             {teamMembers.map((member) => (
               <div key={member.id} className="member-row">
                 <div className="avatar">{member.name.split(' ').map((part) => part[0]).join('')}</div>
-                <div>
-                  <strong>{member.name}</strong>
-                  <span>{member.role}</span>
-                </div>
-                <span className={`presence ${member.status}`}>{member.status}</span>
+              <div>
+                <strong>{member.name}</strong>
+                <span>{member.role}</span>
+              </div>
+                <span className={`presence ${member.status}`}>{member.status === 'online' ? 'Available' : member.status === 'away' ? 'In review' : 'Offline'}</span>
               </div>
             ))}
           </div>

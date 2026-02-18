@@ -623,6 +623,8 @@ textarea {
   border-radius: 999px;
   padding: 6px 10px;
   background: var(--surface-strong);
+  font-weight: 800;
+  text-transform: capitalize;
 }
 
 .presence.online { color: var(--green); }
