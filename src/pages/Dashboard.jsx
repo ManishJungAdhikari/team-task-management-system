@@ -2,7 +2,7 @@ import StatCard from '../components/StatCard.jsx';
 import { useWorkspace } from '../context/WorkspaceContext.jsx';
 
 export default function Dashboard() {
-  const { tasks, projects } = useWorkspace();
+  const { tasks, projects, loading, error } = useWorkspace();
   const completedTasks = tasks.filter((task) => task.status === 'Completed').length;
   const inProgressTasks = tasks.filter((task) => task.status === 'In Progress').length;
   const averageProgress = Math.round(projects.reduce((sum, project) => sum + project.progress, 0) / projects.length);
@@ -17,6 +17,9 @@ export default function Dashboard() {
         </div>
         <p>Track project progress, task status, and team activity in one workspace.</p>
       </div>
+
+      {loading ? <div className="notice-card">Loading workspace data...</div> : null}
+      {error ? <div className="notice-card error">{error}</div> : null}
 
       <section className="stats-grid">
         <StatCard label="Total Tasks" value={tasks.length} hint="Across active projects" />
