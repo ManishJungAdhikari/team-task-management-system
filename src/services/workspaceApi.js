@@ -6,11 +6,19 @@ function wait(ms = 350) {
   });
 }
 
+function createResponse(data) {
+  return {
+    ok: true,
+    receivedAt: new Date().toISOString(),
+    data,
+  };
+}
+
 export async function fetchWorkspaceSummary() {
   await wait();
-  return {
+  return createResponse({
     tasks: initialTasks,
     projects: initialProjects,
     members: teamMembers,
-  };
+  }).data;
 }
