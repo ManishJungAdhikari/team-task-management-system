@@ -36,6 +36,17 @@ export default function Analytics() {
         <StatCard label="Review Rate" value="92%" hint="Feedback addressed" tone="purple" />
       </section>
 
+      <section className="insight-strip">
+        <article>
+          <strong>Best focus day</strong>
+          <span>Thursday shows the strongest productivity score.</span>
+        </article>
+        <article>
+          <strong>Review point</strong>
+          <span>Open issues should be checked before sprint closure.</span>
+        </article>
+      </section>
+
       <section className="panel chart-panel">
         <div className="panel-header">
           <h2>Weekly Task Completion</h2>
