@@ -733,6 +733,11 @@ textarea {
   cursor: pointer;
 }
 
+.segmented-controls button.selected {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
 .toggle-row {
   display: flex;
   grid-template-columns: auto 1fr;

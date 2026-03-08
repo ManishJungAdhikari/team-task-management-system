@@ -4,7 +4,11 @@ import PageHeader from '../components/PageHeader.jsx';
 export default function Settings() {
   function toggleTheme(theme) {
     document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem('team-manager-theme', theme);
   }
+
+  const savedTheme = window.localStorage.getItem('team-manager-theme') || 'light';
+  document.documentElement.dataset.theme = savedTheme;
 
   return (
     <div className="page-stack">
@@ -19,8 +23,8 @@ export default function Settings() {
           <h2>Theme</h2>
           <p>Switch between light and dark modes for accessibility testing.</p>
           <div className="segmented-controls">
-            <button type="button" onClick={() => toggleTheme('light')}><Sun size={18} /> Light</button>
-            <button type="button" onClick={() => toggleTheme('dark')}><Moon size={18} /> Dark</button>
+            <button className={savedTheme === 'light' ? 'selected' : ''} type="button" onClick={() => toggleTheme('light')}><Sun size={18} /> Light</button>
+            <button className={savedTheme === 'dark' ? 'selected' : ''} type="button" onClick={() => toggleTheme('dark')}><Moon size={18} /> Dark</button>
           </div>
         </div>
 
