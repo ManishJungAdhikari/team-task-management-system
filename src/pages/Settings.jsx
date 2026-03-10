@@ -28,6 +28,7 @@ export default function Settings() {
           </div>
         </div>
 
+<<<<<<< HEAD
         <label className="toggle-row">
           <input type="checkbox" defaultChecked />
           Email notifications for assigned tasks
@@ -40,6 +41,37 @@ export default function Settings() {
           <input type="checkbox" />
           Product update announcements
         </label>
+=======
+        <div className="settings-group">
+          <h2>Notifications</h2>
+          <p>Choose which updates should be visible for workspace members.</p>
+          <div className="notification-preview">
+            <strong>Preview</strong>
+            <span>Task updates and weekly summaries will appear in the workspace activity area.</span>
+          </div>
+          <label className="toggle-row">
+            <input type="checkbox" defaultChecked />
+            <span>
+              <strong>Assigned task alerts</strong>
+              <small>Notify users when a task is assigned or updated.</small>
+            </span>
+          </label>
+          <label className="toggle-row">
+            <input type="checkbox" defaultChecked />
+            <span>
+              <strong>Weekly progress summary</strong>
+              <small>Show a short summary of project progress each week.</small>
+            </span>
+          </label>
+          <label className="toggle-row">
+            <input type="checkbox" />
+            <span>
+              <strong>Product update announcements</strong>
+              <small>Display occasional updates about new workspace features.</small>
+            </span>
+          </label>
+        </div>
+>>>>>>> f99e9ae (improve settings notification controls)
       </section>
     </div>
   );

@@ -746,6 +746,49 @@ textarea {
   font-weight: 600;
 }
 
+<<<<<<< HEAD
+=======
+.toggle-row input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  padding: 0;
+}
+
+.toggle-row span {
+  display: grid;
+  gap: 3px;
+}
+
+.toggle-row small {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.settings-group {
+  display: grid;
+  gap: 12px;
+}
+
+.notification-preview {
+  display: grid;
+  gap: 4px;
+  width: min(620px, 100%);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  background: var(--surface-strong);
+  padding: 12px 14px;
+}
+
+.notification-preview span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+>>>>>>> f99e9ae (improve settings notification controls)
 .auth-switch a {
   color: var(--blue);
   font-weight: 800;
