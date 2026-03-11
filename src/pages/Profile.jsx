@@ -28,6 +28,10 @@ export default function Profile() {
             <input defaultValue={user?.role} />
           </label>
           <label>
+            Department
+            <input defaultValue="Operations" />
+          </label>
+          <label>
             Bio
             <textarea defaultValue="Product team member focused on planning, task coordination, and project delivery." />
           </label>
