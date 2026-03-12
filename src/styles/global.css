@@ -819,6 +819,12 @@ textarea {
   .nav-list {
     grid-auto-flow: column;
     overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .nav-link {
+    min-width: max-content;
   }
 
   .stats-grid,
