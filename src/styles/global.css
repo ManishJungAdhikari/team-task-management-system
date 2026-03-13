@@ -83,6 +83,17 @@ a {
   margin-bottom: 34px;
 }
 
+.brand-block > div:last-child {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.brand-block strong {
+  display: block;
+  line-height: 1.1;
+}
+
 .brand-mark {
   display: grid;
   place-items: center;
@@ -146,11 +157,16 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
+.search-area {
+  position: relative;
+  width: min(520px, 100%);
+}
+
 .search-box {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: min(520px, 100%);
+  width: 100%;
   padding: 11px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -162,6 +178,50 @@ a {
   border: 0;
   outline: 0;
   background: transparent;
+}
+
+.search-results {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 8px;
+}
+
+.search-results a {
+  display: grid;
+  gap: 2px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.search-results a:hover {
+  background: var(--surface-strong);
+}
+
+.search-results span {
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.search-results small,
+.search-results p {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.search-results p {
+  margin: 0;
+  padding: 10px;
 }
 
 .profile-chip {
@@ -221,6 +281,23 @@ a {
   gap: 16px;
 }
 
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.quick-actions a {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--blue);
+  font-weight: 800;
+  padding: 14px 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
 .stat-card,
 .panel,
 .auth-panel {
@@ -253,6 +330,14 @@ a {
 
 .panel {
   padding: 20px;
+}
+
+.compact-panel {
+  padding: 16px 20px;
+}
+
+.compact-panel .toolbar {
+  margin-bottom: 0;
 }
 
 .panel-header {
@@ -487,6 +572,30 @@ textarea {
 .priority-pill.medium { background: var(--orange-soft); color: var(--orange); }
 .priority-pill.low { background: var(--green-soft); color: var(--green); }
 
+.priority-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.priority-summary-card {
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 14px 16px;
+}
+
+.priority-summary-card strong {
+  font-size: 1.8rem;
+}
+
+.priority-summary-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .empty-state {
   display: grid;
   place-items: center;
@@ -592,6 +701,8 @@ textarea {
   border-radius: 999px;
   padding: 6px 10px;
   background: var(--surface-strong);
+  font-weight: 800;
+  text-transform: capitalize;
 }
 
 .presence.online { color: var(--green); }
@@ -631,6 +742,25 @@ textarea {
 .deadline-card small {
   color: var(--muted);
   font-size: 0.86rem;
+}
+
+.insight-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.insight-strip article {
+  display: grid;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 16px;
+}
+
+.insight-strip span {
+  color: var(--muted);
 }
 
 .chart-panel {
@@ -709,6 +839,21 @@ textarea {
   gap: 12px;
 }
 
+.notification-preview {
+  display: grid;
+  gap: 4px;
+  width: min(620px, 100%);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  background: var(--surface-strong);
+  padding: 12px 14px;
+}
+
+.notification-preview span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .auth-switch a {
   color: var(--blue);
   font-weight: 800;
@@ -739,11 +884,20 @@ textarea {
   .nav-list {
     grid-auto-flow: column;
     overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .nav-link {
+    min-width: max-content;
   }
 
   .stats-grid,
   .content-grid,
   .project-grid,
+  .quick-actions,
+  .priority-summary,
+  .insight-strip,
   .deadline-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -789,6 +943,9 @@ textarea {
   .stats-grid,
   .content-grid,
   .project-grid,
+  .quick-actions,
+  .priority-summary,
+  .insight-strip,
   .deadline-grid,
   .task-form,
   .toolbar,

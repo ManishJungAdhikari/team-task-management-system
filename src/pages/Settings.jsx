@@ -31,6 +31,10 @@ export default function Settings() {
         <div className="settings-group">
           <h2>Notifications</h2>
           <p>Choose which updates should be visible for workspace members.</p>
+          <div className="notification-preview">
+            <strong>Preview</strong>
+            <span>Task updates and weekly summaries will appear in the workspace activity area.</span>
+          </div>
           <label className="toggle-row">
             <input type="checkbox" defaultChecked />
             <span>
