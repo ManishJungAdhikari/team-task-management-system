@@ -221,23 +221,6 @@ a {
   gap: 16px;
 }
 
-.quick-actions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.quick-actions a {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--blue);
-  font-weight: 800;
-  padding: 14px 16px;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
 .stat-card,
 .panel,
 .auth-panel {
@@ -270,14 +253,6 @@ a {
 
 .panel {
   padding: 20px;
-}
-
-.compact-panel {
-  padding: 16px 20px;
-}
-
-.compact-panel .toolbar {
-  margin-bottom: 0;
 }
 
 .panel-header {
@@ -512,30 +487,6 @@ textarea {
 .priority-pill.medium { background: var(--orange-soft); color: var(--orange); }
 .priority-pill.low { background: var(--green-soft); color: var(--green); }
 
-.priority-summary {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.priority-summary-card {
-  display: grid;
-  gap: 4px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  padding: 14px 16px;
-}
-
-.priority-summary-card strong {
-  font-size: 1.8rem;
-}
-
-.priority-summary-card span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
 .empty-state {
   display: grid;
   place-items: center;
@@ -641,8 +592,6 @@ textarea {
   border-radius: 999px;
   padding: 6px 10px;
   background: var(--surface-strong);
-  font-weight: 800;
-  text-transform: capitalize;
 }
 
 .presence.online { color: var(--green); }
@@ -682,25 +631,6 @@ textarea {
 .deadline-card small {
   color: var(--muted);
   font-size: 0.86rem;
-}
-
-.insight-strip {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.insight-strip article {
-  display: grid;
-  gap: 5px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  padding: 16px;
-}
-
-.insight-strip span {
-  color: var(--muted);
 }
 
 .chart-panel {
@@ -754,11 +684,6 @@ textarea {
   font-weight: 600;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 26a8ec4 (polish responsive layout and accessibility labels)
 .toggle-row input[type="checkbox"] {
   flex: 0 0 auto;
   width: 18px;
@@ -784,25 +709,6 @@ textarea {
   gap: 12px;
 }
 
-<<<<<<< HEAD
-.notification-preview {
-  display: grid;
-  gap: 4px;
-  width: min(620px, 100%);
-  border-left: 3px solid var(--blue);
-  border-radius: 0 8px 8px 0;
-  background: var(--surface-strong);
-  padding: 12px 14px;
-}
-
-.notification-preview span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
->>>>>>> f99e9ae (improve settings notification controls)
-=======
->>>>>>> 26a8ec4 (polish responsive layout and accessibility labels)
 .auth-switch a {
   color: var(--blue);
   font-weight: 800;
@@ -833,20 +739,11 @@ textarea {
   .nav-list {
     grid-auto-flow: column;
     overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: thin;
-  }
-
-  .nav-link {
-    min-width: max-content;
   }
 
   .stats-grid,
   .content-grid,
   .project-grid,
-  .quick-actions,
-  .priority-summary,
-  .insight-strip,
   .deadline-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -892,9 +789,6 @@ textarea {
   .stats-grid,
   .content-grid,
   .project-grid,
-  .quick-actions,
-  .priority-summary,
-  .insight-strip,
   .deadline-grid,
   .task-form,
   .toolbar,
