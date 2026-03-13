@@ -435,6 +435,10 @@ textarea {
   gap: 14px;
 }
 
+.settings-form {
+  gap: 28px;
+}
+
 .task-form {
   grid-template-columns: repeat(6, minmax(0, 1fr));
   align-items: end;
@@ -740,14 +744,21 @@ textarea {
 
 .toggle-row {
   display: flex;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 12px;
+  width: min(620px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  padding: 14px;
   font-weight: 600;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 26a8ec4 (polish responsive layout and accessibility labels)
 .toggle-row input[type="checkbox"] {
   flex: 0 0 auto;
   width: 18px;
@@ -773,6 +784,7 @@ textarea {
   gap: 12px;
 }
 
+<<<<<<< HEAD
 .notification-preview {
   display: grid;
   gap: 4px;
@@ -789,6 +801,8 @@ textarea {
 }
 
 >>>>>>> f99e9ae (improve settings notification controls)
+=======
+>>>>>>> 26a8ec4 (polish responsive layout and accessibility labels)
 .auth-switch a {
   color: var(--blue);
   font-weight: 800;
@@ -843,6 +857,10 @@ textarea {
     grid-template-columns: 1fr 1fr;
   }
 
+  .data-row {
+    align-items: start;
+  }
+
   .task-form label:nth-child(1),
   .task-form label:nth-child(2),
   .task-form label:nth-child(5),
@@ -861,6 +879,10 @@ textarea {
   .profile-chip {
     justify-content: space-between;
     text-align: left;
+  }
+
+  .topbar {
+    padding: 14px 18px;
   }
 
   .page-surface {
@@ -887,6 +909,10 @@ textarea {
 
   .member-row {
     grid-template-columns: 44px 1fr;
+  }
+
+  .activity-form {
+    grid-template-columns: 1fr;
   }
 
   .presence {

@@ -77,20 +77,20 @@ export default function Tasks() {
 
       <section className="panel">
         <div className="toolbar">
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search by task or project" />
-          <select value={status} onChange={(event) => setStatus(event.target.value)}>
+          <input aria-label="Search tasks" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search by task or project" />
+          <select aria-label="Filter by status" value={status} onChange={(event) => setStatus(event.target.value)}>
             <option>All</option>
             <option>To Do</option>
             <option>In Progress</option>
             <option>Completed</option>
           </select>
-          <select value={priority} onChange={(event) => setPriority(event.target.value)}>
+          <select aria-label="Filter by priority" value={priority} onChange={(event) => setPriority(event.target.value)}>
             <option>All</option>
             <option>Low</option>
             <option>Medium</option>
             <option>High</option>
           </select>
-          <select value={sortBy} onChange={(event) => setSortBy(event.target.value)}>
+          <select aria-label="Sort tasks" value={sortBy} onChange={(event) => setSortBy(event.target.value)}>
             <option value="dueDate">Due date</option>
             <option value="priority">Priority</option>
             <option value="status">Status</option>

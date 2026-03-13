@@ -29,6 +29,7 @@ export default function Settings() {
         </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         <label className="toggle-row">
           <input type="checkbox" defaultChecked />
           Email notifications for assigned tasks
@@ -49,6 +50,11 @@ export default function Settings() {
             <strong>Preview</strong>
             <span>Task updates and weekly summaries will appear in the workspace activity area.</span>
           </div>
+=======
+        <div className="settings-group">
+          <h2>Notifications</h2>
+          <p>Choose which updates should be visible for workspace members.</p>
+>>>>>>> 26a8ec4 (polish responsive layout and accessibility labels)
           <label className="toggle-row">
             <input type="checkbox" defaultChecked />
             <span>
@@ -71,7 +77,10 @@ export default function Settings() {
             </span>
           </label>
         </div>
+<<<<<<< HEAD
 >>>>>>> f99e9ae (improve settings notification controls)
+=======
+>>>>>>> 26a8ec4 (polish responsive layout and accessibility labels)
       </section>
     </div>
   );

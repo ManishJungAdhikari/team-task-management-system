@@ -8,7 +8,7 @@ export default function Topbar() {
     <header className="topbar">
       <div className="search-box">
         <Search size={18} />
-        <input aria-label="Search workspace" placeholder="Search tasks, projects, members..." />
+        <input aria-label="Search workspace" placeholder="Search tasks, projects, members..." type="search" />
       </div>
       <div className="profile-chip">
         <div>
